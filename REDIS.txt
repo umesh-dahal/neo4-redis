@@ -1,0 +1,36 @@
+using StackExchange.Redis;
+using System;
+
+namespace chat
+{
+    class program{
+        private const string _connectionString = "localhost";
+        private static ConnectionMultiplexer _connectionMulplexer = 
+        ConnectionMultiplexer.Connect(_connectionString);
+        private static string username, channelname;
+        static void Main(String[] args)
+        {
+            Console.WriteLine("Enter Name: ");
+            username = Console.ReadLine();
+
+            Console.WriteLine("Enter Chatroom: ");
+            channelname = Console.ReadLine();
+
+            Console.Title = $"Hello{username}, is in Chatroom{channelname}";
+
+            var pubSub = _connectionMulplexer.GetSubscriber();
+            pubSub.Subscribe(channelname,(channel, message) => DisplayMessage(message));
+            pubSub.Publish(channelname,$"{username} has joined room {channelname}");
+            
+            while(true)
+            {
+                var message = Console.ReadLine();
+                pubSub.Publish(channelname,$"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second} {username}:{message}");
+            }
+        }
+        private static void DisplayMessage(RedisValue message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+}

@@ -1,0 +1,528 @@
+CREATE
+
+
+//organisation Name
+(o:Organisation{name:"Tessa Motor"}),
+
+
+
+//3-Ressort
+(rb:Ressort{name:"Beschaffung"}),
+(rf:Ressort{name:"Finanz"}),
+(rp:Ressort{name:"Produktion"}),
+
+
+
+//Abteilungen der Ressort Beschaffung
+(abe:Abteilung{name:"Einkauf"}),
+(abl:Abteilung{name:"Lager"}),
+(abt:Abteilung{name:"Transport"}),
+
+//Abteilungen der Ressort Finanz
+(afa:Abteilung{name:"Abrechnung"}),
+(afc:Abteilung{name:"Controlling"}),
+(afs:Abteilung{name:"Steuern"}),
+
+//Abteilungen der Ressort Produktion
+(apd:Abteilung{name:"Distribution"}),
+(apq:Abteilung{name:"Qualitätssicherung"}),
+(apr:Abteilung{name:"Ressource"}),
+
+
+
+//Gruppe
+
+//Gruppen der Abteilung Einkauf-Beschaffung
+(gbekp:Gruppe{name:"Kosten Planung"}),
+(gberb:Gruppe{name:"Rechnung begleichen"}),
+
+//Gruppen der Abteilung Lager-Beschaffung
+(gblae:Gruppe{name:"Auftrag erstellen"}),
+(gblbb:Gruppe{name:"Bedarf Bestimmung"}),
+
+//Gruppen der Abteilung Transport-Beschaffung
+(gbtaw:Gruppe{name:"Annahme der Ware"}),
+(gbtpw:Gruppe{name:"Prüfung der Ware"}),
+
+
+
+//Gruppen der Abteilung Abrechnung-Finanz
+(gfala:Gruppe{name:"Lohnabrechnung"}),
+(gfav:Gruppe{name:"Versicherung"}),
+
+//Gruppen der Abteilung Controlling-Finanz
+(gfca:Gruppe{name:"Analyse"}),
+(gfcpp:Gruppe{name:"Prozess Planung"}),
+
+//Gruppen der Abteilung Steuern-Finanz
+(gfsbe:Gruppe{name:"Bilanz erstellen"}),
+(gfstm:Gruppe{name:"Tax Management"}),
+
+
+
+//Gruppen der Abteilung Distribution-Produktion
+(gpdal:Gruppe{name:"Absatz Logistik"}),
+(gpdpl:Gruppe{name:"Produkt Lager"}),
+
+//Gruppen der Abteilung Qualitätssicherung-Produktion
+(gpqpv:Gruppe{name:"Produkt verbessern"}),
+(gpqqp:Gruppe{name:"Qualitätsprüfung"}),
+
+//Gruppen der Abteilung Ressource-Produktion
+(gprpb:Gruppe{name:"Planung Betriebsmittel"}),
+(gprph:Gruppe{name:"Planung Hilfsmittel"}),
+
+
+//Leiter
+
+//Leiter der Ressorten 
+(lb:Leiter{Vorname:"Umesh", Nachname:"Dahal",Straße:"Robert-Mayer_Straße 44",PLZ:"60486",Ort:"Frankfurt am Main"}),
+(lf:Leiter{Vorname:"David", Nachname:"Mazouz", Straße:"Robert-Mayer_Straße 44", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lp:Leiter{Vorname:"Erin", Nachname:"Richards", Straße:"Robert-Mayer_Straße 44", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Abteilung(Beschaffung)
+(lbe:Leiter{Vorname:"Alice", Nachname:"Tetch", Straße:"Gräfstraße 51", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lbl:Leiter{Vorname:"Lee", Nachname:"Thompkins", Straße:"Gräfstraße 51", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lbt:Leiter{Vorname:"Arnold", Nachname:"Flach", Straße:"Gräfstraße 51", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Abteilung(Finanz)
+(lfa:Leiter{Vorname:"Lila", Nachname:"Valeska", Straße:"Adalberstr 12", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lfc:Leiter{Vorname:"Aubrery", Nachname:"James", Straße:"Adalberstr 12", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lfs:Leiter{Vorname:"Lucius", Nachname:"Fox", Straße:"Adalberstr 12", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Abteilung(Produktion)
+(lpd:Leiter{Vorname:"Karen", Nachname:"Jennings", Straße:"Hamburger Allee 49", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lpq:Leiter{Vorname:"Kristle", Nachname:"Kringle", Straße:"Hamburger Allee 49", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lpr:Leiter{Vorname:"Alfred", Nachname:"Pennyworth", Straße:"Hamburger Allee 49", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Einkauf-Beschaffung)
+(lbekp:Leiter{Vorname:"Paul", Nachname:"Cicero", Straße:"Theodor-Heuss-Alle 23", PLZ:"60327", Ort:"Frankfurt am Main"}),
+(lberb:Leiter{Vorname:"Cory", Nachname:"Michael", Straße:"Theodor-Heuss-Alle 23", PLZ:"60327", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Lager-Beschaffung)
+(lblae:Leiter{Vorname:"Oswald", Nachname:"Cobblepot", Straße:"Theodor-Heuss-Alle 23", PLZ:"60327", Ort:"Frankfurt am Main"}),
+(lblbb:Leiter{Vorname:"Nathaniel", Nachname:"Barnes", Straße:"Theodor-Heuss-Alle 23", PLZ:"60327", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Transport-Beschaffung)
+(lbtaw:Leiter{Vorname:"Carmine", Nachname:"Falcone", Straße:"Theodor-Heuss-Alle 23", PLZ:"60327", Ort:"Frankfurt am Main"}),
+(lbtpw:Leiter{Vorname:"Crispus", Nachname:"Allen", Straße:"Theodor-Heuss-Alle 23", PLZ:"60327", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Abrechnung-Finanz)
+(lfala:Leiter{Vorname:"Butch", Nachname:"Gilzean", Straße:"Kasseler Straße 13", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lfav:Leiter{Vorname:"Bruce", Nachname:"Wayne", Straße:"Kasseler Straße 13", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Contolling-Finanz)
+(lfca:Leiter{Vorname:"Mario", Nachname:"Pepper", Straße:"Kasseler Straße 13", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lfcpp:Leiter{Vorname:"Martha", Nachname:"Wayne", Straße:"Kasseler Straße 13", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Steuern-Finanz)
+(lfsbe:Leiter{Vorname:"Bridgit", Nachname:"Pike", Straße:"Kasseler Straße 13", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lfstm:Leiter{Vorname:"Barbara", Nachname:"Kean", Straße:"Kasseler Straße 13", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Distribution-Produktion)
+(lpdal:Leiter{Vorname:"Frankie", Nachname:"Carbone", Straße:"Am Römerhof 88", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lpdpl:Leiter{Vorname:"Fish", Nachname:"Mooney", Straße:"Am Römerhof 88", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Qualitätssicherung-Produktion)
+(lpqpv:Leiter{Vorname:"Dorothy", Nachname:"Duncan", Straße:"Am Römerhof 88", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lpqqp:Leiter{Vorname:"Edward", Nachname:"Nygma", Straße:"Am Römerhof 88", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+//Leiter der Gruppe(Ressource-Produktion)
+(lprpb:Leiter{Vorname:"Reggie", Nachname:"Payne", Straße:"Am Römerhof 88", PLZ:"60486", Ort:"Frankfurt am Main"}),
+(lprph:Leiter{Vorname:"Renee", Nachname:"Montoya", Straße:"Am Römerhof 88", PLZ:"60486", Ort:"Frankfurt am Main"}),
+
+
+
+//Mitarbeiter 
+
+//Mitarbeiter in Beschaffung
+
+//Gruppe : Auftrag Erstellung (einkauf)
+(mbekp1:Mitarbeiter{Vorname:"Silver", Nachname:"Cloud", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+(mbekp2:Mitarbeiter{Vorname:"Selina", Nachname:"Kyle", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe : Rechnung begleichen (einkauf)
+(mberb1:Mitarbeiter{Vorname:"Sarah", Nachname:"Essen", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+(mberb2:Mitarbeiter{Vorname:"Salvatore", Nachname:"Maroni", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe: Auftrag Erstellung(Lager)
+(mblae1:Mitarbeiter{Vorname:"Stan", Nachname:"Potolsky", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+(mblae2:Mitarbeiter{Vorname:"Gerald", Nachname:"Crane", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe : Bedarf Bestimmung (Lager)
+(mblbb1:Mitarbeiter{Vorname:"Gertrude", Nachname:"Kapelput", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+(mblbb2:Mitarbeiter{Vorname:"Gillian", Nachname:"Loeb", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe : Annahme der Ware (Transport)
+(mbtaw1:Mitarbeiter{Vorname:"Hugo", Nachname:"Strange", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+(mbtaw2:Mitarbeiter{Vorname:"Tabith", Nachname:"Galavan", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe : Prüfung der Ware (Transport)
+(mbtpw1:Mitarbeiter{Vorname:"Harvey", Nachname:"Bullock", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+(mbtpw2:Mitarbeiter{Vorname:"Henry", Nachname:"Dent", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+
+//Mitarbeiter in Finanz
+
+//Gruppe: Lohnabrechnung(Abrechnung)
+(mfala1:Mitarbeiter{Vorname:"Tomasz", Nachname:"Stockinger", Straße:"Kaiser Str 56", PLZ:"60329", Ort:"Frankfurt"}),
+(mfala2:Mitarbeiter{Vorname:"Grazyana", Nachname:"Szapolowska", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe: Versicherung(Abrechnung)
+(mfav1:Mitarbeiter{Vorname:"Magdalena", Nachname:"Lamparska", Straße:"Kaiser Str 56", PLZ:"60329", Ort:"Frankfurt"}),
+(mfav2:Mitarbeiter{Vorname:"Otar", Nachname:"Saralidze", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe: Analyse(Contolling)
+(mfca1:Mitarbeiter{Vorname:"Mateusz", Nachname:"Lasowski", Straße:"Kaiser Str 56", PLZ:"60329", Ort:"Frankfurt"}),
+(mfca2:Mitarbeiter{Vorname:"Gianni", Nachname:"Parisi", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe: Prozess Planung(Controlling)
+(mfcpp1:Mitarbeiter{Vorname:"Przemyslaw", Nachname:"Sadowski", Straße:"Kaiser Str 56", PLZ:"60329", Ort:"Frankfurt"}),
+(mfcpp2:Mitarbeiter{Vorname:"Agnieszka", Nachname:"Warchulska", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe: Bilanz erstellen(Steuern)
+(mfsbe1:Mitarbeiter{Vorname:"Anna", Nachname:"Sieklucka", Straße:"Kaiser Str 56", PLZ:"60329", Ort:"Frankfurt"}),
+(mfsbe2:Mitarbeiter{Vorname:"Natasza", Nachname:"Urbanska", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+//Gruppe: Tax Management(Steuern)
+(mfstm1:Mitarbeiter{Vorname:"Bronislaw", Nachname:"Wroclawski", Straße:"Kaiser Str 56", PLZ:"60329", Ort:"Frankfurt"}),
+(mfstm2:Mitarbeiter{Vorname:"Michele", Nachname:"Morrone", Straße:"Frankfurter Str 17", PLZ:"65830", Ort:"Kriftel"}),
+
+
+//Mitarbeiter in Produktion
+
+//Gruppe: Absatz Logistik(Distribution)
+(mpdal1:Mitarbeiter{Vorname:"James", Nachname:"Gordon", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+(mpdal2:Mitarbeiter{Vorname:"Jack", Nachname:"Buchinsky", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+
+//Gruppe: Produkt Lager(Distribution)
+(mpdpl1:Mitarbeiter{Vorname:"Jason", Nachname:"Skolimski", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+(mpdpl2:Mitarbeiter{Vorname:"Jeremiah", Nachname:"Valeska", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+
+//Gruppe:Produkt Verbesserung (Qualitätssicherung)
+(mpqpv1:Mitarbeiter{Vorname:"Thomas", Nachname:"Wayne", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+(mpqpv2:Mitarbeiter{Vorname:"Theo", Nachname:"Galavan", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+
+//Gruppe:Qualitätsprüfung(Qualitätssicherung)
+(mpqqp1:Mitarbeiter{Vorname:"Joe", Nachname:"Pike", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+(mpqqp2:Mitarbeiter{Vorname:"Jerome", Nachname:"Vale", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+
+//Gruppe: Planung Betriebsmittel(Ressource)
+(mprpb1:Mitarbeiter{Vorname:"Victor", Nachname:"Fries", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+(mprpb2:Mitarbeiter{Vorname:"Viktor", Nachname:"Zsasz", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+
+//Gruppe: Planung Hilfsmittel(Ressource)
+(mprph1:Mitarbeiter{Vorname:"Tommy", Nachname:"Elliot", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+(mprph2:Mitarbeiter{Vorname:"Ian", Nachname:"Hargrove", Straße:"Am Markt 101a", PLZ:"65795", Ort:"Hattersheim"}),
+
+
+//Relations
+
+//Relation Ressort zu Organisation
+(rb)-[:ist_teil_von]->(o),
+(rf)-[:ist_teil_von]->(o),
+(rp)-[:ist_teil_von]->(o),
+
+//Relation Abteilung zu Ressort
+
+//zu Beschaffung
+(abe)-[:ist_teil_von]->(rb),
+(abl)-[:ist_teil_von]->(rb),
+(abt)-[:ist_teil_von]->(rb),
+
+
+//zu Finanz
+(afa)-[:ist_teil_von]->(rf),
+(afc)-[:ist_teil_von]->(rf),
+(afs)-[:ist_teil_von]->(rf),
+
+
+//zu Produktion
+(apd)-[:ist_teil_von]->(rp),
+(apq)-[:ist_teil_von]->(rp),
+(apr)-[:ist_teil_von]->(rp),
+
+
+
+//Relation Gruppe zu Abteilung
+
+//Beschaffung
+
+//Einkauf
+(gbekp)-[:ist_teil_von]->(abe),
+(gberb)-[:ist_teil_von]->(abe),
+
+//Lager
+(gblae)-[:ist_teil_von]->(abl),
+(gblbb)-[:ist_teil_von]->(abl),
+
+//Transport
+(gbtaw)-[:ist_teil_von]->(abt),
+(gbtpw)-[:ist_teil_von]->(abt),
+
+
+//Finanaz
+
+//Abrechnung
+(gfala)-[:ist_teil_von]->(afa),
+(gfav)-[:ist_teil_von]->(afa),
+
+//Controlling
+(gfca)-[:ist_teil_von]->(afc),
+(gfcpp)-[:ist_teil_von]->(afc),
+
+//Steuern
+(gfsbe)-[:ist_teil_von]->(afs),
+(gfstm)-[:ist_teil_von]->(afs),
+
+
+//Produktion
+
+//Distribution
+(gpdal)-[:ist_teil_von]->(apd),
+(gpdpl)-[:ist_teil_von]->(apd),
+
+//Qualitätssicherung
+(gpqpv)-[:ist_teil_von]->(apq),
+(gpqqp)-[:ist_teil_von]->(apq),
+
+//Ressource
+(gprpb)-[:ist_teil_von]->(apr),
+(gprph)-[:ist_teil_von]->(apr),
+
+
+
+//Relation Leiter zu Ressort
+(lb)-[:leitet]->(rb),
+(lf)-[:leitet]->(rf),
+(lp)-[:leitet]->(rp),
+
+
+//Relation Leiter zu Abteilung
+
+//Beschaffung
+(lbe)-[:leitet]->(abe),
+(lbl)-[:leitet]->(abl),
+(lbt)-[:leitet]->(abt),
+
+//Finanz
+(lfa)-[:leitet]->(afa),
+(lfc)-[:leitet]->(afc),
+(lfs)-[:leitet]->(afs),
+
+//Produktion
+(lpd)-[:leitet]->(apd),
+(lpq)-[:leitet]->(apq),
+(lpr)-[:leitet]->(apr),
+
+
+//Relation Leiter zur Gruppe
+
+//Beschaffung
+
+//Einkauf
+(lbekp)-[:leitet]->(gbekp),
+(lberb)-[:leitet]->(gberb),
+
+//Lager
+(lblae)-[:leitet]->(gblae),
+(lblbb)-[:leitet]->(gblbb),
+
+//Transport
+(lbtaw)-[:leitet]->(gbtaw),
+(lbtpw)-[:leitet]->(gbtpw),
+
+
+//Finanz
+
+//Abrechnung
+(lfala)-[:leitet]->(gfala),
+(lfav)-[:leitet]->(gfav),
+
+//Controlling
+(lfca)-[:leitet]->(gfca),
+(lfcpp)-[:leitet]->(gfcpp),
+
+//Steuern
+(lfsbe)-[:leitet]->(gfsbe),
+(lfstm)-[:leitet]->(gfstm),
+
+
+//Produktion
+
+//Distribution
+(lpdal)-[:leitet]->(gpdal),
+(lpdpl)-[:leitet]->(gpdpl),
+
+//Qualitätssicherung
+(lpqpv)-[:leitet]->(gpqpv),
+(lpqqp)-[:leitet]->(gpqqp),
+
+//Ressource
+(lprpb)-[:leitet]->(gprpb),
+(lprph)-[:leitet]->(gprph),
+
+
+
+//Relation Mitarbeiter zu Gruppe
+
+// In Beschaffung
+
+//kosten Planung(Einkauf)
+(mbekp1)-[:arbeitet_in]->(gbekp),
+(mbekp2)-[:arbeitet_in]->(gbekp),
+
+//Rechnung begleichen(Einkauf)
+(mberb1)-[:arbeitet_in]->(gberb),
+(mberb2)-[:arbeitet_in]->(gberb),
+
+//Auftrag Erstellung(Lager)
+(mblae1)-[:arbeitet_in]->(gblae),
+(mblae2)-[:arbeitet_in]->(gblae),
+
+//Bedarf Bestimmung(Lager)
+(mblbb1)-[:arbeitet_in]->(gblbb),
+(mblbb2)-[:arbeitet_in]->(gblbb),
+
+//Annahme der Ware(Transport)
+(mbtaw1)-[:arbeitet_in]->(gbtaw),
+(mbtaw2)-[:arbeitet_in]->(gbtaw),
+
+//Prüfung der Ware(Transport)
+(mbtpw1)-[:arbeitet_in]->(gbtpw),
+(mbtpw2)-[:arbeitet_in]->(gbtpw),
+
+
+//In Finanz
+
+//Lohnabrechnung(Abrechnung)
+(mfala1)-[:arbeitet_in]->(gfala),
+(mfala2)-[:arbeitet_in]->(gfala),
+
+//Versicherung(Abrechnung)
+(mfav1)-[:arbeitet_in]->(gfav),
+(mfav2)-[:arbeitet_in]->(gfav),
+
+//Ananlyse(Controlling)
+(mfca1)-[:arbeitet_in]->(gfca),
+(mfca2)-[:arbeitet_in]->(gfca),
+
+//Prozess Planung(Controlling)
+(mfcpp1)-[:arbeitet_in]->(gfcpp),
+(mfcpp2)-[:arbeitet_in]->(gfcpp),
+
+//Bilanz Erstellung(Steuern)
+(mfsbe1)-[:arbeitet_in]->(gfsbe),
+(mfsbe2)-[:arbeitet_in]->(gfsbe),
+
+//Tax Management(Steuern)
+(mfstm1)-[:arbeitet_in]->(gfstm),
+(mfstm2)-[:arbeitet_in]->(gfstm),
+
+
+//In Produktion
+
+//Absatz  Logistik(Distribution)
+(mpdal1)-[:arbeitet_in]->(gpdal),
+(mpdal2)-[:arbeitet_in]->(gpdal),
+
+//Produkt Lager(Distribution)
+(mpdpl1)-[:arbeitet_in]->(gpdpl),
+(mpdpl2)-[:arbeitet_in]->(gpdpl),
+
+//Produkt Verbesserung(Qualitätssicherung)
+(mpqpv1)-[:arbeitet_in]->(gpqpv),
+(mpqpv2)-[:arbeitet_in]->(gpqpv),
+
+//Qualitätsprüfung(Qualitätssicherung)
+(mpqqp1)-[:arbeitet_in]->(gpqqp),
+(mpqqp2)-[:arbeitet_in]->(gpqqp),
+
+//Planung Betriebsmittel(Ressource)
+(mprpb1)-[:arbeitet_in]->(gprpb),
+(mprpb2)-[:arbeitet_in]->(gprpb),
+
+//Planung Hilfsmittel(Ressource)
+(mprph1)-[:arbeitet_in]->(gprph),
+(mprph2)-[:arbeitet_in]->(gprph),
+
+
+
+//Relation Gruppenübergreifend
+
+//Beschaffung
+
+(lbekp)-[:arbeitet_in]->(gblae),
+(lbekp)-[:arbeitet_in]->(gbtaw),
+
+(lberb)-[:arbeitet_in]->(gblbb),
+(lberb)-[:arbeitet_in]->(gbtpw),
+
+(lblae)-[:arbeitet_in]->(gbekp),
+(lblae)-[:arbeitet_in]->(gbtaw),
+
+(lblbb)-[:arbeitet_in]->(gberb),
+(lblbb)-[:arbeitet_in]->(gbtpw),
+
+(lbtaw)-[:arbeitet_in]->(gbekp),
+(lbtaw)-[:arbeitet_in]->(gblae),
+
+(lbtpw)-[:arbeitet_in]->(gberb),
+(lbtpw)-[:arbeitet_in]->(gblbb),
+
+
+//Finanz
+
+(lfala)-[:arbeitet_in]->(gfca),
+(lfala)-[:arbeitet_in]->(gfsbe),
+
+(lfav)-[:arbeitet_in]->(gfcpp),
+(lfav)-[:arbeitet_in]->(gfstm),
+
+(lfca)-[:arbeitet_in]->(gfala),
+(lfca)-[:arbeitet_in]->(gfsbe),
+
+(lfcpp)-[:arbeitet_in]->(gfav),
+(lfcpp)-[:arbeitet_in]->(gfstm),
+
+(lfsbe)-[:arbeitet_in]->(gfala),
+(lfsbe)-[:arbeitet_in]->(gfca),
+
+(lfstm)-[:arbeitet_in]->(gfav),
+(lfstm)-[:arbeitet_in]->(gfcpp),
+
+//Produktion
+
+(lpdal)-[:arbeitet_in]->(gpqpv),
+(lpdal)-[:arbeitet_in]->(gprpb),
+
+(lpdpl)-[:arbeitet_in]->(gpqqp),
+(lpdpl)-[:arbeitet_in]->(gprph),
+
+(lpqpv)-[:arbeitet_in]->(gpdal),
+(lpqpv)-[:arbeitet_in]->(gprpb),
+
+(lpqqp)-[:arbeitet_in]->(gpdpl),
+(lpqqp)-[:arbeitet_in]->(gprph),
+
+(lprpb)-[:arbeitet_in]->(gpdal),
+(lprpb)-[:arbeitet_in]->(gpqpv),
+
+(lprph)-[:arbeitet_in]->(gpdpl),
+(lprph)-[:arbeitet_in]->(gpqqp)
+
+
+
+//THE END//
